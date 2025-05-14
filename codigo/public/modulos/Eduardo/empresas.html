@@ -12,162 +12,217 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="empresas.css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 d-md-block sidebar">
-          <div class="position-sticky pt-3">
-            <div class="text-center mb-4">
-              <img src="img/logo.png" alt="Logo" height="40" />
-              <h5 class="text-white mt-2">Digitalize Admin</h5>
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-brand">
+          <img src="img/logo.png" alt="Logo" />
+          <h5>Digitalize Admin</h5>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">
+              <i class="fas fa-tachometer-alt"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="empresas.html">
+              <i class="fas fa-building"></i>
+              Empresas
+              <span
+                class="badge bg-primary rounded-pill ms-1"
+                id="totalEmpresas"
+                >0</span
+              >
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pendentes">
+              <i class="fas fa-clock"></i>
+              Pendentes
+              <span
+                class="badge badge-pendente rounded-pill ms-1"
+                id="pendentesCount"
+                >0</span
+              >
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#usuarios">
+              <i class="fas fa-users"></i>
+              Usuários
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#configuracoes">
+              <i class="fas fa-cog"></i>
+              Configurações
+            </a>
+          </li>
+          <li class="nav-item mt-4">
+            <a class="nav-link text-danger" href="index.html">
+              <i class="fas fa-sign-out-alt"></i>
+              Sair
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Conteúdo principal -->
+      <main class="main-content">
+        <div class="page-header">
+          <h1 class="page-title">Empresas Cadastradas</h1>
+          <div class="btn-toolbar">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                Exportar
+              </button>
             </div>
-            <ul class="nav flex-column px-2">
-              <li class="nav-item">
-                <a class="nav-link" href="admin.html">
-                  <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="empresas.html">
-                  <i class="fas fa-building"></i> Empresas
-                  <span class="badge bg-primary rounded-pill ms-1">24</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pendentes">
-                  <i class="fas fa-clock"></i> Pendentes
-                  <span class="badge badge-pendente rounded-pill ms-1">5</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#usuarios">
-                  <i class="fas fa-users"></i> Usuários
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#configuracoes">
-                  <i class="fas fa-cog"></i> Configurações
-                </a>
-              </li>
-              <li class="nav-item mt-4">
-                <a class="nav-link text-danger" href="index.html">
-                  <i class="fas fa-sign-out-alt"></i> Sair
-                </a>
-              </li>
-            </ul>
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              id="btnNovaEmpresa"
+            >
+              <i class="fas fa-plus me-1"></i> Nova Empresa
+            </button>
           </div>
         </div>
 
-        <!-- Conteúdo -->
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
-          <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-          >
-            <h1 class="h2">Empresas Cadastradas</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary">
-                  Exportar
-                </button>
+        <!-- Filtros -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-3">
+                <label for="filtroStatus" class="form-label">Status</label>
+                <select id="filtroStatus" class="form-select">
+                  <option value="">Todos</option>
+                  <option value="pendente">Pendente</option>
+                  <option value="aprovado">Aprovado</option>
+                  <option value="rejeitado">Rejeitado</option>
+                </select>
               </div>
-              <button type="button" class="btn btn-sm btn-primary">
-                <i class="fas fa-plus me-1"></i> Nova Empresa
-              </button>
-            </div>
-          </div>
-
-          <!-- Filtros -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="row g-3">
-                <div class="col-md-3">
-                  <label for="filtroStatus" class="form-label">Status</label>
-                  <select id="filtroStatus" class="form-select">
-                    <option value="">Todos</option>
-                    <option value="pendente">Pendente</option>
-                    <option value="aprovado">Aprovado</option>
-                    <option value="rejeitado">Rejeitado</option>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <label for="filtroSegmento" class="form-label"
-                    >Segmento</label
-                  >
-                  <select id="filtroSegmento" class="form-select">
-                    <option value="">Todos</option>
-                    <option value="varejo">Varejo</option>
-                    <option value="servicos">Serviços</option>
-                    <option value="industria">Indústria</option>
-                    <option value="outros">Outros</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label for="filtroBusca" class="form-label"
-                    >Buscar por nome</label
-                  >
+              <div class="col-md-3">
+                <label for="filtroSegmento" class="form-label">Segmento</label>
+                <select id="filtroSegmento" class="form-select">
+                  <option value="">Todos</option>
+                  <option value="tecnologia">Tecnologia</option>
+                  <option value="varejo">Varejo</option>
+                  <option value="servicos">Serviços</option>
+                  <option value="industria">Indústria</option>
+                  <option value="alimentos">Alimentos</option>
+                  <option value="construcao">Construção</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="filtroBusca" class="form-label">Buscar</label>
+                <div class="input-group">
                   <input
                     type="text"
                     id="filtroBusca"
                     class="form-control"
-                    placeholder="Digite parte do nome ou razão social..."
+                    placeholder="Digite parte do nome, CNPJ ou responsável..."
                   />
+                  <button class="btn btn-primary" type="button" id="btnBuscar">
+                    <i class="fas fa-search"></i>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Tabela -->
-          <div class="card">
-            <div class="card-body table-responsive">
-              <table class="table table-hover align-middle" id="empresasTable">
-                <thead class="table-light">
+        <!-- Tabela de empresas -->
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover" id="empresasTable">
+                <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Razão Social</th>
-                    <th>Nome Fantasia</th>
+                    <th>Empresa</th>
                     <th>CNPJ</th>
-                    <th>Segmento</th>
                     <th>Responsável</th>
-                    <th>Data</th>
+                    <th>Segmento</th>
+                    <th>Data Cadastro</th>
                     <th>Status</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- Exemplo de linha - dados dinâmicos virão aqui -->
-                  <tr>
-                    <td>1001</td>
-                    <td>Tech Solutions LTDA</td>
-                    <td>Tech Solutions</td>
-                    <td>12.345.678/0001-99</td>
-                    <td>Tecnologia</td>
-                    <td>João Silva</td>
-                    <td>15/05/2025</td>
-                    <td><span class="badge badge-pendente">Pendente</span></td>
-                    <td>
-                      <button class="btn btn-sm btn-success me-1">
-                        <i class="fas fa-check"></i>
-                      </button>
-                      <button class="btn btn-sm btn-danger me-1">
-                        <i class="fas fa-times"></i>
-                      </button>
-                      <button class="btn btn-sm btn-primary">
-                        <i class="fas fa-eye"></i>
-                      </button>
-                    </td>
-                  </tr>
+                  <!-- Dados serão carregados via JavaScript -->
                 </tbody>
               </table>
             </div>
+
+            <!-- Paginação -->
+            <nav aria-label="Page navigation" class="mt-3">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Próxima</a>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </main>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div
+      class="modal fade"
+      id="detalhesEmpresa"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Detalhes da Empresa</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="modalDetalhesBody">
+            <!-- Conteúdo será carregado via JavaScript -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="btnAprovarModal">
+              <i class="fas fa-check me-1"></i> Aprovar
+            </button>
+            <button type="button" class="btn btn-danger" id="btnRejeitarModal">
+              <i class="fas fa-times me-1"></i> Rejeitar
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="database.js"></script>
     <script src="empresas.js"></script>
   </body>
 </html>

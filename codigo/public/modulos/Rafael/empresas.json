@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1747340763929,
+    "razaoSocial": "Empresa Digitalize LTDA",
+    "nomeFantasia": "Digitalize",
+    "cnpj": "99.999.999/9999-99",
+    "segmento": "Tecnologia",
+    "endereco": {
+      "estado": "MG",
+      "cidade": "Belo Horizonte",
+      "rua": "Dom José Gaspar",
+      "cep": "30535901"
+    },
+    "responsavelNome": "Rafael",
+    "responsavelCargo": "Cadastro de Empresas",
+    "responsavelEmail": "rafarno10@gmail.com",
+    "responsavelTelefone": "(31) 98989-4364",
+    "servicosInteresse": [
+      "site",
+      "marketing"
+    ],
+    "observacoes": "Essa é a parte de cadastro de empresa."
+  }
+]

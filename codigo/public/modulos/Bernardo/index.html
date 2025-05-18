@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parceiros - Digitalize</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+  <header>
+    <div class="logo-container">
+      <img src="logo2.png" alt="Logo Digitalize" class="logo-img" />
+      <span class="logo-text">Digitalize</span>
+    </div>
+    <nav>
+      <a href="inicio.html">Início</a>
+      <a href="login.html">Login</a>
+      <a href="index.html" class="active">Sobre nós</a>
+    </nav>
+  </header>
+
+  <div class="container-principal">
+    <main>
+        <h1 class="NossosParceiros">Nossos Parceiros</h1>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel-track">
+          <div class="partner">
+            <img class="carousel-img" />
+            <h2></h2>
+          </div>
+          <div class="partner main">
+            <img class="carousel-img" />
+            <h2></h2>
+          </div>
+          <div class="partner">
+            <img class="carousel-img" />
+            <h2></h2>
+          </div>
+        </div>
+
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Digitalize. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

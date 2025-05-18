@@ -1,0 +1,73 @@
+{
+  "empresas": [
+    {
+      "id": 1,
+      "razaoSocial": "Empresa Digitalize LTDA",
+      "nomeFantasia": "Digitalize",
+      "cnpj": "99.999.999/9999-99",
+      "segmento": "Tecnologia",
+      "endereco": {
+        "estado": "MG",
+        "cidade": "Belo Horizonte",
+        "rua": "Dom José Gaspar",
+        "cep": "30535901"
+      },
+      "responsavelNome": "Rafael",
+      "responsavelCargo": "Cadastro de Empresas",
+      "responsavelEmail": "rafarno10@gmail.com",
+      "responsavelTelefone": "(31) 98989-4364",
+      "servicosInteresse": [
+        "Gestão de Redes Sociais",
+        "SEO"
+      ],
+      "observacoes": "Essa é a parte de cadastro de empresa.",
+      "status": "aprovado"
+    },
+    {
+      "id": 2,
+      "razaoSocial": "Teste Larissa LTDA",
+      "nomeFantasia": "Larissa LTDA",
+      "cnpj": "77.777.777/7777-77",
+      "segmento": "Outros",
+      "endereco": {
+        "estado": "MG",
+        "cidade": "Belo Horizonte",
+        "rua": "Teste Um",
+        "cep": "31311-123"
+      },
+      "responsavelNome": "Larissa",
+      "responsavelCargo": "CEO",
+      "responsavelEmail": "larissa@gmail.com",
+      "responsavelTelefone": "(31) 999999999",
+      "servicosInteresse": [
+        "Criação de Site",
+        "marketing"
+      ],
+      "observacoes": "Essa é a parte de teste de empresa.",
+      "status": "pendente"
+    },
+    {
+      "id": 3,
+      "razaoSocial": "Razão Social Empresa 3 S.A.",
+      "nomeFantasia": "Empresa 3 S.A.",
+      "cnpj": "00.000.000/0000-00",
+      "segmento": "Indústria",
+      "endereco": {
+        "estado": "MG",
+        "cidade": "Belo Horizonte",
+        "rua": "Teste 3",
+        "cep": "31311-000"
+      },
+      "responsavelNome": "Fulano de Tal",
+      "responsavelCargo": "Diretor",
+      "responsavelEmail": "xxxx@gmail.com",
+      "responsavelTelefone": "(31) 999999999",
+      "servicosInteresse": [
+        "Sistema Personalizado",
+        "marketing"
+      ],
+      "observacoes": "Essa é a parte de teste de empresa.",
+      "status": "rejeitado"
+    }
+  ]
+}

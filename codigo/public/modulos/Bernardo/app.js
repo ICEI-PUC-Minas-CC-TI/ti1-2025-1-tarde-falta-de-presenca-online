@@ -1,37 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const parceiros = [
-    {
-      src: "https://picsum.photos/id/1011/300/300",
-      alt: "Parceiro 1",
-      id: "1",
-      nome: "Empresa 1"
-    },
-    {
-      src: "https://picsum.photos/id/1012/300/300",
-      alt: "Parceiro 2",
-      id: "2",
-      nome: "Empresa 2"
-    },
-    {
-      src: "https://picsum.photos/id/1013/300/300",
-      alt: "Parceiro 3",
-      id: "3",
-      nome: "Empresa 3"
-    },
-    {
-      src: "https://picsum.photos/id/1015/300/300",
-      alt: "Parceiro 4",
-      id: "4",
-      nome: "Empresa 4"
-    },
-    {
-      src: "https://picsum.photos/id/1016/300/300",
-      alt: "Parceiro 5",
-      id: "5",
-      nome: "Empresa 5"
-    }
-  ];
-
+  let parceiros = [];
   let currentIndex = 0;
 
   const slides = document.querySelectorAll('.partner');
@@ -39,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const titleEls = document.querySelectorAll('.partner h2');
 
   function updateCarousel() {
+    if (parceiros.length === 0) return;
+
     const total = parceiros.length;
     const prevIndex = (currentIndex - 1 + total) % total;
     const nextIndex = (currentIndex + 1) % total;
@@ -68,5 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
     window.open(`detalhes.html?id=${partnerId}`, '_blank');
   });
 
-  updateCarousel(); 
+  // Carregar dados do JSON
+  fetch('parceiros.json')
+    .then(response => response.json())
+    .then(data => {
+      parceiros = data;
+      updateCarousel();
+    })
+    .catch(error => console.error('Erro ao carregar parceiros:', error));
 });

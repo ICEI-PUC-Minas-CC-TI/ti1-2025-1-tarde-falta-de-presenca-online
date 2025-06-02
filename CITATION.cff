@@ -2,18 +2,18 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Costa
+    given-names: Bernardo
+  - family-names: Murta
+    given-names: Eduardo
+  - family-names: Pedro Costa
+    given-names: João
+  - family-names: Varella
+    given-names: Larissa
+  - family-names: Ramaldes
+    given-names: Rafael
+  - family-names: Mara
+    given-names: Luciana
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: 

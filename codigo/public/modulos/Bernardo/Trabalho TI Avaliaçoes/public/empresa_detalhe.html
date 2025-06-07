@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Empresa - Digitalize</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2 d-md-block sidebar">
+        <div class="position-sticky pt-3">
+          <div class="text-center mb-4">
+            <img src="img/logo.png" alt="Logo Digitalize" height="50" />
+            <h5 class="text-white mt-2">Digitalize Cadastro</h5>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="admin.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="empresas.html">
+                <i class="fas fa-building"></i> Empresas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pendentes">
+                <i class="fas fa-clock"></i> Pendentes
+              </a>
+            </li>
+            <li class="nav-item mt-4">
+              <a class="nav-link text-danger" href="index.html">
+                <i class="fas fa-sign-out-alt"></i> Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dados da empresa</h1>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card shadow-sm">
+              <div class="card-body p-4 p-md-5">
+                <div id="empresaForm">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Nome Fantasia:</label>
+                      <span id="nomeFantasia" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Status:</label>
+                      <span id="status" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Segmento:</label>
+                      <span id="segmento" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Razão Social:</label>
+                      <span id="razaoSocial" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">CNPJ:</label>
+                      <span id="cnpj" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Rua:</label>
+                      <span id="rua" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">CEP:</label>
+                      <span id="cep" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Cidade:</label>
+                      <span id="cidade" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Estado:</label>
+                      <span id="estado" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Responsável:</label>
+                      <span id="responsavelNome" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Cargo:</label>
+                      <span id="responsavelCargo" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">E-mail:</label>
+                      <span id="responsavelEmail" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Telefone:</label>
+                      <span id="responsavelTelefone" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Serviços de Interesse:</label>
+                      <span id="servicoSite" class="fw-bold mb-4">...</span>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Observações:</label>
+                      <span id="observacoes" class="fw-bold mb-4">...</span>
+                    </div>
+                  </div>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                    <a href="index.html"><button class="btn btn-primary px-4">Voltar</button></a>
+                  </div>
+                </div>
+
+                <hr class="my-5">
+                <div id="avaliacoesContainer">
+                  <h4 class="mb-3">Avaliações</h4>
+                  <div id="mediaEstrelas" class="mb-3 text-primary fw-bold"></div>
+                  <div id="listaAvaliacoes" class="mb-4"></div>
+
+                  <h5>Adicionar Avaliação</h5>
+                  <div class="mb-3">
+                    <label class="form-label">Nota (1 a 5):</label>
+                    <select class="form-select" id="estrelas">
+                      <option value="1">⭐</option>
+                      <option value="2">⭐⭐</option>
+                      <option value="3">⭐⭐⭐</option>
+                      <option value="4">⭐⭐⭐⭐</option>
+                      <option value="5" selected>⭐⭐⭐⭐⭐</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Comentário:</label>
+                    <textarea class="form-control" id="comentario" rows="3"></textarea>
+                  </div>
+                  <button class="btn btn-success" id="btnEnviarAvaliacao">Enviar Avaliação</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    let empresaId = new URLSearchParams(location.search).get('id');
+
+    fetch('http://localhost:3000/empresas?id=' + empresaId)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.length > 0) {
+          let e = data[0];
+          $("#nomeFantasia").text(e.nomeFantasia);
+          $("#status").text(e.status);
+          $("#segmento").text(e.segmento);
+          $("#cnpj").text(e.cnpj);
+          $("#razaoSocial").text(e.razaoSocial);
+          $("#rua").text(e.endereco.rua);
+          $("#cep").text(e.endereco.cep);
+          $("#cidade").text(e.endereco.cidade);
+          $("#estado").text(e.endereco.estado);
+          $("#responsavelNome").text(e.responsavelNome);
+          $("#responsavelCargo").text(e.responsavelCargo);
+          $("#responsavelEmail").text(e.responsavelEmail);
+          $("#responsavelTelefone").text(e.responsavelTelefone);
+          $("#servicoSite").text(e.servicosInteresse);
+          $("#observacoes").text(e.observacoes);
+        } else {
+          $("#empresaForm").html("<p class='text-danger'>Empresa não encontrada.</p>");
+        }
+      });
+
+    function carregarAvaliacoes() {
+      fetch(`http://localhost:3000/avaliacoes?empresaId=${empresaId}`)
+        .then(res => res.json())
+        .then(avaliacoes => {
+          const container = document.getElementById('listaAvaliacoes');
+          container.innerHTML = '';
+
+          if (avaliacoes.length === 0) {
+            container.innerHTML = '<p>Sem avaliações ainda.</p>';
+            document.getElementById('mediaEstrelas').innerHTML = 'Sem avaliações ainda.';
+            return;
+          }
+
+          let soma = 0;
+          avaliacoes.forEach(avaliacao => {
+            soma += avaliacao.estrelas;
+            const div = document.createElement('div');
+            div.classList.add('mb-3', 'border-bottom', 'pb-2');
+            div.innerHTML = `<div><strong>${'⭐'.repeat(avaliacao.estrelas)}</strong></div>
+                             <div>${avaliacao.comentario}</div>`;
+            container.appendChild(div);
+          });
+
+          const media = soma / avaliacoes.length;
+          const arredondada = Math.round(media);
+          document.getElementById('mediaEstrelas').innerHTML = `
+            <strong>Média de Avaliações:</strong> ${media.toFixed(1)} (${ '⭐'.repeat(arredondada) })
+          `;
+        });
+    }
+
+    document.getElementById('btnEnviarAvaliacao').addEventListener('click', () => {
+      const estrelas = parseInt(document.getElementById('estrelas').value);
+      const comentario = document.getElementById('comentario').value.trim();
+
+      if (!comentario) {
+        alert("Por favor, escreva um comentário.");
+        return;
+      }
+
+      const novaAvaliacao = {
+        empresaId: parseInt(empresaId),
+        estrelas,
+        comentario
+      };
+
+      fetch('http://localhost:3000/avaliacoes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(novaAvaliacao)
+      }).then(() => {
+        document.getElementById('comentario').value = '';
+        document.getElementById('estrelas').value = '5';
+        carregarAvaliacoes();
+      });
+    });
+
+    carregarAvaliacoes();
+  </script>
+
+</body>
+
+</html>

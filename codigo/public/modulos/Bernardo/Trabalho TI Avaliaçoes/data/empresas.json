@@ -1,0 +1,58 @@
+{
+  "empresas": [
+    {
+      "id": 1,
+      "nomeFantasia": "Digitalize",
+      "status": "aprovado",
+      "segmento": "Tecnologia",
+      "razaoSocial": "Digitalize LTDA",
+      "cnpj": "99.999.999/9999-99",
+      "endereco": {
+        "rua": "Rua das Inovações",
+        "cep": "12345-678",
+        "cidade": "Belo Horizonte",
+        "estado": "MG"
+      },
+      "responsavelNome": "João Silva",
+      "responsavelCargo": "CEO",
+      "responsavelEmail": "joao@digitalize.com",
+      "responsavelTelefone": "(31) 99999-9999",
+      "servicosInteresse": "Criação de Site, Marketing Digital",
+      "observacoes": "Empresa de destaque no setor tecnológico."
+    },
+    {
+      "id": 2,
+      "nomeFantasia": "Larissa LTDA",
+      "status": "pendente",
+      "segmento": "Serviços",
+      "razaoSocial": "Larissa Serviços Integrados",
+      "cnpj": "77.777.777/7777-77",
+      "endereco": {
+        "rua": "Av. Central",
+        "cep": "23456-789",
+        "cidade": "Contagem",
+        "estado": "MG"
+      },
+      "responsavelNome": "Larissa Souza",
+      "responsavelCargo": "Gerente",
+      "responsavelEmail": "larissa@empresa.com",
+      "responsavelTelefone": "(31) 98888-8888",
+      "servicosInteresse": "Consultoria, E-commerce",
+      "observacoes": "Aguardando validação de documentos."
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": 1,
+      "empresaId": 1,
+      "estrelas": 5,
+      "comentario": "Excelente atendimento!"
+    },
+    {
+      "id": 2,
+      "empresaId": 2,
+      "estrelas": 5,
+      "comentario": "Excelente atendimento!"
+    }   
+  ]
+}

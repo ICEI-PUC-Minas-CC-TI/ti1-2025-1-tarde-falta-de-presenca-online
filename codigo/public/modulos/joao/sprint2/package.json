@@ -1,0 +1,17 @@
+{
+  "name": "sprint2-digitalize",
+  "version": "1.0.0",
+  "description": "Projeto Sprint 2 - Digitalize com funcionalidades de geolocalização e filtros",
+  "main": "index.html",
+  "scripts": {
+    "start": "json-server --watch public/Db.json --port 3001 --static public",
+    "dev": "json-server --watch public/Db.json --port 3001 --host 0.0.0.0 --static public"
+  },
+  "keywords": ["mapa", "geolocalização", "filtros", "empresas"],
+  "author": "Sprint 2 Team",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
+

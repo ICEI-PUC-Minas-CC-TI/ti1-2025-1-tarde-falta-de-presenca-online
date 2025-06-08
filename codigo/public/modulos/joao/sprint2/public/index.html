@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização de Nossos Clientes - Digitalize</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container">
+                <h1>Localização de Nossos Clientes</h1>
+                <p class="subtitle">Explore onde nossos valiosos clientes estão localizados.</p>
+            </div>
+        </header>
+
+        <main class="site-content">
+            <div class="container">
+                <section class="filters-section">
+                    <h2>Filtros</h2>
+                    <div class="filter-group">
+                        <label for="category-filter">Categoria:</label>
+                        <select id="category-filter">
+                            <option value="all">Todas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="distance-filter">Distância (km):</label>
+                        <select id="distance-filter">
+                            <option value="all">Todas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button id="location-btn" type="button">📍 Usar Minha Localização</button>
+                    </div>
+                </section>
+                <section class="company-list-section">
+                    <h2>Empresas Próximas</h2>
+                    <ul id="company-list"></ul>
+                </section>
+                <section class="map-section">
+                    <div id="map"></div>
+                </section>
+                <section class="info-section">
+                    <h2>Sobre o Mapa</h2>
+                    <p>Este mapa interativo exibe a localização geográfica de nossas empresas clientes. Utilize os controles do mapa para navegar e clique nos marcadores para ver mais informações sobre cada cliente, como nome e endereço completo.</p>
+                    <p>Nosso objetivo é fornecer uma visualização clara da nossa base de clientes, demonstrando nosso alcance e a diversidade de negócios que confiam em nossas soluções.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2024 Digitalize. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script src="scriptEmbutido.js"></script>
+</body>
+</html>

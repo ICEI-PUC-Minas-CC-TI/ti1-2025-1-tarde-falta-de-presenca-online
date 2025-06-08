@@ -350,3 +350,35 @@
 .btn-remover .fa-spinner {
   margin-right: 5px;
 }
+
+/* Estilos para o botão de favorito */
+.btn-favorito {
+  transition: all 0.3s;
+}
+
+.btn-favorito .fa-heart {
+  transition: all 0.3s;
+}
+
+/* Estilos para a página de favoritos */
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  color: #6c757d;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #e9ecef;
+}
+
+/* Animação para remoção de favoritos */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}

@@ -16,6 +16,8 @@ O objetivo do nosso projeto é criar uma solução digital simples e acessível 
 
 * Luciana Mara Freitas Diniz
 
+## Projeto Completo
+* O projeto completo *unificado* está na pasta "Digitalize-final", foram feitas alterações para o melhor funcionamento do programa como um todo.
 
 
 ## Instruções de utilização 
